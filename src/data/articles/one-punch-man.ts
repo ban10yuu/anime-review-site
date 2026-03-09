@@ -1,0 +1,52 @@
+import { Article } from '@/lib/types';
+
+export const articles: Article[] = [
+  {
+    slug: 'opm-saitama-existential',
+    title: "Saitama's Existential Crisis: One Punch Man as Philosophical Comedy",
+    animeSlug: 'one-punch-man',
+    category: 'analysis',
+    excerpt: "What happens when you achieve your dream and it means nothing? OPM explores existential depression through superhero satire.",
+    sections: [
+      { heading: 'The Premise as Philosophy', content: "Saitama trained so hard he went bald and became invincible. Every fight ends in one punch. This premise is simultaneously hilarious and deeply sad. OPM asks: what gives life meaning when you have already achieved everything? Saitama's boredom is not laziness; it is existential crisis.\n\nIn philosophical terms, Saitama has achieved Nietzsche's Ubermensch but found it empty. He has transcended human limitations and discovered that transcendence itself is meaningless without something to strive toward. <strong>His depression is the logical consequence of unlimited power in a finite world</strong>." },
+      { heading: 'Genos as Narrative Counterweight', content: "Genos exists to show what Saitama has lost. Where Saitama fights without excitement, Genos fights with desperate intensity. Where Saitama wins effortlessly, Genos loses repeatedly and rebuilds himself. Genos's earnestness makes Saitama's apathy more poignant by contrast.\n\nTheir master-student relationship works because Genos idolizes Saitama's strength while Saitama envies Genos's passion. Each has what the other lacks, creating a dynamic that is comedic on the surface but touching underneath." },
+      { heading: 'The Hero Association: Institutional Satire', content: "OPM's Hero Association ranks heroes by arbitrary metrics that reward popularity over effectiveness. Saitama is ranked low despite being omnipotent because he lacks charisma and self-promotion skills. This satirizes meritocracy: the system does not reward the best but the most visible.\n\nKing, who is ranked S-Class despite having zero combat ability purely through misunderstanding and luck, is the ultimate expression of this satire. He proves that reputation is more powerful than ability in institutional hierarchies." },
+      { heading: 'Monster Design as Social Commentary', content: "OPM's monsters often represent social anxieties taken to literal extremes. Crablante was a man who ate too much crab. Vaccine Man was born from pollution. The Deep Sea King represents the ocean's revenge on humanity. Each monster is a human failing or societal problem given physical form.\n\nThis approach to villain design is both creative and thematically rich. Every monster Saitama destroys in one punch is a societal problem casually dismissed, which mirrors how society often ignores systemic issues until they become crises." },
+      { heading: "OPM's Ongoing Relevance", content: "One Punch Man remains relevant because its themes of disillusionment, institutional dysfunction, and the search for purpose resonate with each new generation of readers. In an era of burnout culture and achievement anxiety, Saitama's discovery that achieving your goal does not guarantee happiness is more relevant than ever.\n\n<strong>OPM's greatest achievement is making existential philosophy accessible through comedy</strong>. It proves that the deepest questions about human purpose can be explored through a bald man in a yellow suit punching things." },
+    ],
+    tags: ['One Punch Man', 'Analysis', 'Saitama', 'Philosophy', 'Existentialism'],
+    publishedAt: '2026-02-26',
+  },
+  {
+    slug: 'opm-garou-arc-review',
+    title: "The Monster Association Arc: One Punch Man's Most Ambitious Storyline",
+    animeSlug: 'one-punch-man',
+    category: 'review',
+    excerpt: "Garou's transformation pushed OPM into unexpected territory. Was the payoff worth the years of buildup?",
+    sections: [
+      { heading: 'Garou: The Hero Hunter With a Point', content: "Garou is OPM's most compelling antagonist because his critique of heroism has merit. He argues that the hero system creates a binary where 'heroes' are celebrated and 'monsters' are destroyed, with no room for nuance. As a child who was always cast as the monster in playground games, Garou internalized the idea that the system is rigged.\n\nHis journey from martial artist to cosmic threat escalates OPM's stakes beyond anything previous arcs attempted. Garou does not just fight heroes; he challenges the concept of heroism itself." },
+      { heading: 'The S-Class Showcase', content: "The Monster Association arc gives every S-Class hero a chance to shine. Atomic Samurai's precision, Flashy Flash's speed, and Zombieman's immortality are all pushed to their limits. The standout is King, whose bluff against multiple Dragon-level threats is both the funniest and most suspenseful moment in the arc.\n\n<strong>The arc proves that OPM has a rich enough supporting cast to sustain extended storytelling without Saitama</strong>. His absence from most of the arc's battles creates genuine tension because the other heroes can actually lose." },
+      { heading: "Murata's Artistic Evolution", content: "Yusuke Murata's art in the Monster Association arc reaches levels of detail and dynamism that few manga artists can match. Double-page spreads of cosmic Garou fighting Saitama are gallery-worthy illustrations that happen to also tell a story.\n\nThe controversial chapter redraws, where Murata revised published chapters to alter plot points, divided fans but demonstrated an unusual commitment to quality. Whether the redraws improved the story is debatable, but the artistic ambition is undeniable." },
+      { heading: 'Saitama vs Garou: Comedy Meets Cosmic Horror', content: "The final confrontation between Saitama and Cosmic Garou is OPM at its most visually spectacular and thematically clear. Garou has become powerful enough to threaten the planet. Saitama defeats him while barely paying attention. The comedy of their power gap remains intact even at cosmic scale.\n\nThe resolution, where Saitama talks to Garou rather than just punching him, adds emotional depth. Saitama recognizes Garou as someone who wanted to be a hero but chose the wrong path. This empathy elevates the conclusion beyond simple combat." },
+      { heading: 'The Arc in Context', content: "The Monster Association arc is OPM's most ambitious storyline and largely delivers on its ambition. The action is spectacular, the character moments are earned, and the thematic exploration of heroism deepens. However, the extended runtime and chapter redraws tested reader patience.\n\nAs a complete work, the arc demonstrates that OPM can sustain serious narrative stakes while maintaining its comedic identity. <strong>It proves ONE's story can support both philosophical depth and spectacular action</strong>, setting a strong foundation for future arcs." },
+    ],
+    tags: ['One Punch Man', 'Review', 'Garou', 'Monster Association', 'Murata'],
+    publishedAt: '2026-02-19',
+  },
+  {
+    slug: 'opm-manga-vs-webcomic',
+    title: 'One Punch Man: Manga vs Webcomic Differences Explained',
+    animeSlug: 'one-punch-man',
+    category: 'guide',
+    excerpt: "ONE's webcomic and Murata's manga tell the same story differently. A complete guide to what changed and why.",
+    sections: [
+      { heading: 'Origins: From Hobby to Phenomenon', content: "ONE created the OPM webcomic as a hobby project with deliberately crude art. Its appeal was pure storytelling: sharp comedy, surprising emotional depth, and a deceptively simple premise. Murata, one of the most technically skilled manga artists alive, approached ONE about creating a professional adaptation.\n\nThe collaboration gives OPM a unique position in manga: two versions of the same story by different artists, each with distinct strengths. The webcomic is rawer and more spontaneous. The manga is polished and visually spectacular." },
+      { heading: 'Art: Crude Charm vs Technical Mastery', content: "ONE's webcomic art is intentionally basic. Characters are simple shapes. Backgrounds are minimal. Action scenes are conveyed through impact rather than detail. This crude style paradoxically enhances the comedy because Saitama's blank expression is funnier when drawn simply.\n\nMurata's manga art is some of the most detailed in the medium. Every panel is a showcase of technical skill. <strong>The tradeoff is that Murata's detailed art sometimes makes the comedy feel less immediate</strong>, while adding spectacular visual experiences the webcomic cannot provide." },
+      { heading: 'Story Differences: Additions and Changes', content: "Murata's manga adds significant content not in the webcomic: expanded fights, new characters, additional backstories, and entirely original arcs. The Tournament arc, where Saitama enters a martial arts competition disguised as Charanko, is a manga-only addition that many fans consider a highlight.\n\nSome webcomic plot points are altered in the manga. The Monster Association arc's conclusion differs significantly between versions. The manga tends to expand and elaborate where the webcomic is concise and direct." },
+      { heading: 'Pacing and Tone', content: "The webcomic moves faster because ONE does not linger on fights or visual spectacle. An entire battle might take five pages in the webcomic and fifty in the manga. This creates a different reading experience: the webcomic rewards binge-reading while the manga rewards panel-by-panel appreciation.\n\nTonally, the webcomic is more consistently comedic. The manga introduces more serious moments and dramatic tension, which enriches the story but occasionally shifts the vibe from satirical comedy to earnest action." },
+      { heading: 'Which Should You Read?', content: "Read both. The webcomic provides ONE's unfiltered creative vision with pacing that respects your time. The manga provides the same story with world-class art and expanded content. They complement rather than compete.\n\nIf forced to choose: start with the manga for the superior visual experience, then read the webcomic to see ONE's original intentions and to get ahead of the manga's current plot. <strong>Together, they offer the most complete OPM experience available</strong>." },
+    ],
+    tags: ['One Punch Man', 'Guide', 'Webcomic', 'Manga', 'ONE', 'Murata'],
+    publishedAt: '2026-02-13',
+  },
+];

@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", "Segoe UI", "Roboto", sans-serif;
+  --font-heading: "Orbitron", "Inter", sans-serif;
+  --color-neon-red: #ff3a4f;
+  --color-neon-cyan: #00d4ff;
+  --color-neon-yellow: #ffd23f;
+  --color-bg-primary: #0a0a14;
+  --color-bg-surface: #12121e;
+  --color-bg-elevated: #1a1a2a;
+  --color-border-default: #252538;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0a14;
+  color: #b0b0c8;
+  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  position: relative;
+}
+
+/* Anime dot pattern overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(0,212,255,0.015) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Speed lines for hero */
+.speed-lines {
+  position: relative;
+  overflow: hidden;
+}
+.speed-lines::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 14px,
+    rgba(255,58,79,0.03) 14px,
+    rgba(255,58,79,0.03) 15px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+.speed-lines > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Anime panel card */
+.anime-panel {
+  background: #12121e;
+  border: 2px solid #252538;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+.anime-panel:hover {
+  border-color: #ff3a4f;
+  box-shadow: 0 0 24px rgba(255,58,79,0.1), 0 4px 20px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+/* Accent panel */
+.accent-panel {
+  border-left: 4px solid #ff3a4f;
+}
+
+/* Article content styles */
+.article-content h2 {
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #eaeaf0;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0 0.5rem 0.85rem;
+  border-left: 4px solid #ff3a4f;
+  background: linear-gradient(to right, rgba(255,58,79,0.06), transparent);
+  font-family: "Inter", sans-serif;
+}
+
+.article-content h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #d0d0e0;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid #00d4ff;
+}
+
+.article-content p {
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: #b0b0c8;
+  margin-bottom: 1rem;
+}
+
+.article-content strong {
+  color: #ffd23f;
+  font-weight: 700;
+}
+
+.article-content blockquote {
+  background: #1a1a2a;
+  border: 2px solid #252538;
+  border-left: 4px solid #00d4ff;
+  border-radius: 2px 12px 12px 2px;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  margin: 1.5rem 0;
+  font-size: 0.9375rem;
+  color: #d0d0e0;
+  position: relative;
+}
+
+/* Dark scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a14;
+}
+::-webkit-scrollbar-thumb {
+  background: #252538;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #353550;
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Rank badge */
+.rank-badge {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.rank-1 { background: #ff3a4f; color: #fff; }
+.rank-2 { background: #ff6b35; color: #fff; }
+.rank-3 { background: #ffd23f; color: #0a0a14; }
+.rank-other { background: #252538; color: #6a6a80; }
+
+/* Neon glow text */
+.neon-red { text-shadow: 0 0 20px rgba(255,58,79,0.3); }
+.neon-cyan { text-shadow: 0 0 20px rgba(0,212,255,0.3); }

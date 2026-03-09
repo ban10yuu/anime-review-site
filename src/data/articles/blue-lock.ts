@@ -1,0 +1,52 @@
+import { Article } from '@/lib/types';
+
+export const articles: Article[] = [
+  {
+    slug: 'blue-lock-ego-philosophy',
+    title: "Blue Lock's Philosophy: Why Ego Jinpachi Believes Selfishness Creates Champions",
+    animeSlug: 'blue-lock',
+    category: 'analysis',
+    excerpt: "Blue Lock argues that Japan's soccer problem isn't talent but mentality. We analyze Ego Jinpachi's radical philosophy and whether it holds up.",
+    sections: [
+      { heading: "Ego's Thesis: Japan Needs a Monster", content: "Ego Jinpachi's premise is brutally simple: Japan has never produced a world-class striker because Japanese culture prioritizes teamwork over individual brilliance. In a sport where a single goal can decide a World Cup final, Japan needs an egoist, someone who prioritizes scoring above all else.\n\nThis philosophy directly challenges the collective values embedded in Japanese society. Blue Lock is not just a sports manga; it is a cultural critique wrapped in soccer. Ego forces 300 strikers to compete in a survival game where cooperation is penalized and individual performance is rewarded." },
+      { heading: 'Isagi Yoichi: The Ordinary Player Who Chooses to Be Extraordinary', content: "Isagi begins Blue Lock as the most generic player in the program. He lacks Rin's talent, Bachira's creativity, and Nagi's natural ability. What he has is spatial awareness, the ability to read the field and position himself where goals happen.\n\nIsagi's growth is compelling because it mirrors real athletic development. He does not gain supernatural powers; he refines his perception, learns to weaponize his positioning, and develops what Ego calls the 'hunger' to score. <strong>Isagi becomes dangerous not by becoming stronger but by becoming smarter</strong>." },
+      { heading: 'The Death Game Structure: Why It Works for Sports', content: "Blue Lock borrows the elimination structure from survival games and applies it to sports training. Each round eliminates players permanently from the program, creating stakes that traditional sports manga lack. When Isagi scores, it means someone else's dream dies.\n\nThis structure solves a fundamental problem in sports manga: repetitive tournament arcs. By adding elimination pressure, every match carries genuine consequences. The reader cannot assume the protagonist's team will win because Blue Lock has demonstrated willingness to discard popular characters." },
+      { heading: 'Real Soccer Parallels: From Messi to Haaland', content: "Blue Lock's character archetypes map onto real soccer players. Rin Itoshi echoes the clinical precision of a young Cristiano Ronaldo. Bachira Meguru plays like Neymar with his unpredictable dribbling. Nagi Seishiro's effortless talent mirrors Zinedine Zidane.\n\nThese parallels ground the manga's fantastical abilities in real soccer appreciation. When Noel Noa appears as the world's greatest striker, his philosophy of calculated, efficient goal-scoring reflects the real-world debate between beautiful football and effective football." },
+      { heading: "Blue Lock's Impact on Sports Manga", content: "Blue Lock has influenced the sports manga landscape by proving that the genre can incorporate death game tension without losing athletic authenticity. Its commercial success, with over 30 million copies sold, demonstrates appetite for sports stories that prioritize individual psychology over team bonding.\n\nThe series has also drawn criticism for potentially promoting toxic individualism. This criticism misses the nuance: <strong>Blue Lock does not argue that ego is always good but that suppressing individual brilliance for the sake of conformity wastes talent</strong>. The ideal striker, as the manga eventually reveals, channels ego in service of victory, not vanity." },
+    ],
+    tags: ['Blue Lock', 'Analysis', 'Ego Jinpachi', 'Soccer', 'Sports Manga'],
+    publishedAt: '2026-03-07',
+  },
+  {
+    slug: 'blue-lock-striker-rankings',
+    title: 'Every Blue Lock Striker Ranked: From Isagi to Rin to Noel Noa',
+    animeSlug: 'blue-lock',
+    category: 'comparison',
+    excerpt: 'Who is the strongest striker in Blue Lock? We rank every major player by skill, potential, and clutch performance.',
+    sections: [
+      { heading: 'S-Tier: The World-Class Talents', content: "At the top sits Michael Kaiser, whose combination of technical skill, physical dominance, and psychological warfare makes him the most complete striker in Blue Lock's universe. Rin Itoshi occupies the same tier, with raw talent that may exceed Kaiser's but emotional instability that limits his consistency.\n\nNoel Noa stands above everyone as the measuring stick. As the world's number one striker, his clinical efficiency represents the ceiling that all Blue Lock players aspire to reach." },
+      { heading: 'A-Tier: Elite Potential', content: "Isagi Yoichi earns his A-tier placement through his evolved spatial awareness, the ability to see and exploit opportunities that other strikers miss. Bachira Meguru's unpredictable dribbling and creative play make him a nightmare for defenders. Nagi Seishiro's natural talent for first-touch control is perhaps the highest raw ceiling in the program.\n\n<strong>What separates A-tier from S-tier is consistency under pressure</strong>. These players have shown flashes of brilliance but have not yet demonstrated the sustained dominance of Kaiser or Rin." },
+      { heading: 'B-Tier: Dangerous Specialists', content: "Shidou Ryusei's pure striking power and chaotic energy make him a wildcard. Chigiri Hyoma's speed creates scoring opportunities that slower strikers cannot access. Kunigami Rensuke's evolved form after the Wildcard selection demonstrates terrifying physical potential.\n\nThese players would be stars in any other program but exist in the shadow of Blue Lock's elite. Their specializations make them valuable but their limitations prevent them from reaching the top tier independently." },
+      { heading: 'C-Tier: Supporting Strikers', content: "Barou Shouei's physical play and finishing ability are impressive but his rigid style makes him predictable against elite defenders. Tokimitsu Aoshi's raw physical talent is undercut by his timidity. Yukimiya Kenyu relies on his left foot to a degree that limits his versatility.\n\nThese players demonstrate that being talented is not enough in Blue Lock's world. They need to evolve or be eliminated." },
+      { heading: 'The Evolving Hierarchy: Why Rankings Change', content: "Blue Lock's greatest strength is that its power rankings are fluid. Players who dominate one phase struggle in the next. Isagi has gone from bottom-tier to A-tier through pure adaptation. Barou went from dominant to humbled when faced with opponents who could neutralize his style.\n\nThis fluidity reflects real sports, where form fluctuates and adaptation determines longevity. <strong>Blue Lock rewards not the currently strongest player but the one who grows fastest</strong>, making every arc feel unpredictable." },
+    ],
+    tags: ['Blue Lock', 'Comparison', 'Striker Ranking', 'Isagi', 'Kaiser'],
+    publishedAt: '2026-03-02',
+  },
+  {
+    slug: 'blue-lock-sports-manga-revolution',
+    title: 'How Blue Lock Revolutionized Sports Manga With Death Game Mechanics',
+    animeSlug: 'blue-lock',
+    category: 'review',
+    excerpt: 'Blue Lock combines sports action with survival game tension. A review of why this formula changed the genre.',
+    sections: [
+      { heading: 'Breaking the Tournament Formula', content: "Traditional sports manga follow a predictable structure: training arc, tournament arc, defeat, training arc, bigger tournament. Blue Lock demolished this formula by making every match an elimination round. There are no second chances, no loser's brackets, no inspirational comebacks after defeat.\n\nThis structural change transforms how readers engage with matches. In Haikyuu or Slam Dunk, you know the protagonist's team will likely advance. In Blue Lock, you genuinely do not know who will survive each round. This uncertainty is the manga's greatest asset." },
+      { heading: 'The Art of Soccer Action', content: "Nomura Yusuke's art captures the kinetic energy of soccer with a dynamism that few sports artists achieve. Panel layouts during matches create a sense of speed and spatial awareness that mirrors what players actually see on the field.\n\nThe visual representation of Isagi's spatial awareness as a bird's-eye view of the field is a clever technique that makes tactical soccer entertaining in a visual medium. <strong>Blue Lock solved the problem of making soccer strategy visually exciting</strong>, something that even live broadcasts struggle with." },
+      { heading: 'Character Development Through Competition', content: "Every match in Blue Lock serves double duty as both sports action and character development. When Isagi faces Rin, the match is about tactical superiority but also about contrasting philosophies of talent versus effort. When Bachira confronts his inner 'monster,' the game becomes a metaphor for embracing creative instinct.\n\nThis efficiency of storytelling, where plot, theme, and character develop simultaneously through competition, is what elevates Blue Lock above standard sports fare." },
+      { heading: 'Pacing and the Weekly Reading Experience', content: "Blue Lock is one of the best-paced manga in Shonen Jump. Matches move quickly without sacrificing tactical detail. Training segments are brief and focused. Character backstories are delivered in efficient flashbacks rather than multi-chapter diversions.\n\nThe weekly reading experience is consistently satisfying because nearly every chapter advances the story meaningfully. There are no filler chapters, no pointless side stories, no extended training montages. Blue Lock respects its readers' time." },
+      { heading: 'The Legacy of Blue Lock', content: "Blue Lock will be remembered as the manga that proved sports stories can be thrillers. Its influence is already visible in newer sports manga that incorporate higher stakes and more aggressive competition.\n\nWith the anime adaptation bringing the story to a wider audience, Blue Lock has the potential to do for soccer manga what Slam Dunk did for basketball: <strong>inspire a generation to see the sport differently</strong>." },
+    ],
+    tags: ['Blue Lock', 'Review', 'Sports Manga', 'Genre Innovation'],
+    publishedAt: '2026-02-25',
+  },
+];
