@@ -52,6 +52,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://anime-review-site.vercel.app',
   },
+  verification: {
+    google: 'QNT_EwkmJ039_aVzqr1sKc_hySyn-ZpgLZDtAgxtsNo',
+  },
 };
 
 export default function RootLayout({
