@@ -6,6 +6,7 @@ import { getAnimeBySlug, animeList } from '@/data/anime';
 import { CATEGORY_LABELS, CATEGORY_COLORS } from '@/lib/types';
 import AffiliateWidget from '@/components/AffiliateWidget';
 import AdBanner from '@/components/AdBanner';
+import GoogleAd from '@/components/GoogleAd';
 import ArticleCard from '@/components/ArticleCard';
 import Sidebar from '@/components/Sidebar';
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
@@ -116,6 +117,8 @@ export default async function ArticlePage({ params }: PageProps) {
                 {article.title}
               </h1>
 
+              <GoogleAd format="horizontal" className="my-6" />
+
               <AdBanner />
 
               {article.sections.length > 2 && (
@@ -146,6 +149,7 @@ export default async function ArticlePage({ params }: PageProps) {
                         <p key={j} dangerouslySetInnerHTML={{ __html: paragraph }} />
                       ))}
                     </div>
+                    {i === 2 && <GoogleAd format="rectangle" className="my-6" />}
                     {i < article.sections.length - 1 && i % 2 === 0 && <AdBanner />}
                   </div>
                 ))}
