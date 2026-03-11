@@ -36,10 +36,10 @@ export default function ContactPage() {
           </h2>
           <p className="mb-2">
             <a
-              href="mailto:contact@example.com"
+              href="mailto:ban10yuu@icloud.com"
               className="text-[#00d4ff] hover:underline font-mono text-base"
             >
-              contact@example.com
+              ban10yuu@icloud.com
             </a>
           </p>
           <p className="text-sm text-gray-500">
