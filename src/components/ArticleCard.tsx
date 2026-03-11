@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Article, CATEGORY_LABELS, CATEGORY_COLORS } from '@/lib/types';
 import { getAnimeBySlug } from '@/data/anime';
+import { tagToSlug } from '@/lib/articles';
 
 export default function ArticleCard({ article, showAnime = true }: { article: Article; showAnime?: boolean }) {
   const anime = getAnimeBySlug(article.animeSlug);
@@ -39,9 +40,13 @@ export default function ArticleCard({ article, showAnime = true }: { article: Ar
 
         <div className="flex items-center gap-2 flex-wrap">
           {article.tags.slice(0, 3).map(tag => (
-            <span key={tag} className="text-[10px] text-gray-600 before:content-['#']">
+            <Link
+              key={tag}
+              href={`/tag/${tagToSlug(tag)}`}
+              className="text-[10px] text-gray-600 hover:text-[#ff3a4f] transition-colors before:content-['#']"
+            >
               {tag}
-            </span>
+            </Link>
           ))}
           <Link
             href={`/article/${article.slug}`}

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getAllArticles } from '@/lib/articles';
+import { getAllArticles, getAllTagSlugs } from '@/lib/articles';
 import { animeList } from '@/data/anime';
 import { ArticleCategory } from '@/lib/types';
 
@@ -42,5 +42,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...homePage, ...animePages, ...articlePages, ...categoryPages];
+  const tagSlugs = getAllTagSlugs();
+  const tagPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/tags/`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    },
+    ...tagSlugs.map(({ slug }) => ({
+      url: `${BASE_URL}/tag/${slug}/`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.5,
+    })),
+  ];
+
+  return [...homePage, ...animePages, ...articlePages, ...categoryPages, ...tagPages];
 }

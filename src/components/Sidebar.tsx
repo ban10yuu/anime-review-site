@@ -2,9 +2,11 @@ import Link from 'next/link';
 import { animeList } from '@/data/anime';
 import { getPopularArticles } from '@/lib/articles';
 import { generalAffiliates } from '@/data/affiliates';
+import { CATEGORY_LABELS } from '@/lib/types';
+import type { ArticleCategory } from '@/lib/types';
 
 export default function Sidebar() {
-  const popularArticles = getPopularArticles(5);
+  const popularArticles = getPopularArticles(10);
 
   return (
     <aside className="space-y-6">
@@ -65,7 +67,35 @@ export default function Sidebar() {
         </div>
       </div>
 
-      {/* Popular Articles */}
+      {/* Category Links */}
+      <div className="anime-panel p-5">
+        <h3 className="text-sm font-black text-[#00d4ff] mb-4 flex items-center gap-2">
+          Categories
+        </h3>
+        <div className="space-y-1">
+          {(Object.entries(CATEGORY_LABELS) as [ArticleCategory, string][]).map(([key, label]) => (
+            <Link
+              key={key}
+              href={`/category/${key}`}
+              className="flex items-center gap-2 py-1.5 px-2 rounded text-sm text-gray-500 hover:bg-[#1a1a2a] hover:text-[#00d4ff] transition-colors"
+            >
+              <span className="text-[10px]">
+                {key === 'review' ? '///' : key === 'analysis' ? '>>>' : key === 'theory' ? '???' : key === 'guide' ? '###' : '<=>'}
+              </span>
+              {label}
+            </Link>
+          ))}
+          <Link
+            href="/tags"
+            className="flex items-center gap-2 py-1.5 px-2 rounded text-sm text-gray-500 hover:bg-[#1a1a2a] hover:text-[#ff3a4f] transition-colors mt-2 border-t border-[#252538] pt-3"
+          >
+            <span className="text-[10px]">###</span>
+            Browse All Tags
+          </Link>
+        </div>
+      </div>
+
+      {/* Popular Articles (expanded to 10) */}
       <div className="anime-panel p-5">
         <h3 className="text-sm font-black text-[#ff3a4f] mb-4 flex items-center gap-2">
           Trending Articles

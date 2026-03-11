@@ -1,25 +1,32 @@
 import Link from 'next/link';
 import { animeList } from '@/data/anime';
+import { getAllTags, tagToSlug } from '@/lib/articles';
 
 export default function Footer() {
-  const ongoingAnime = animeList.filter(a => a.status === 'ongoing').slice(0, 8);
-  const completedAnime = animeList.filter(a => a.status === 'completed').slice(0, 8);
+  const ongoingAnime = animeList.filter(a => a.status === 'ongoing');
+  const completedAnime = animeList.filter(a => a.status === 'completed');
+  const popularTags = getAllTags().slice(0, 20);
 
   return (
     <footer className="bg-[#080810] text-gray-400 border-t-2 border-[#ff3a4f]">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Site Description */}
           <div>
             <h3 className="text-lg font-black text-white mb-4 flex items-center gap-2" style={{ fontFamily: 'Orbitron, Inter, sans-serif' }}>
               <span className="text-[#ff3a4f]">//</span>
               Anime<span className="text-[#00d4ff]">Insight</span>
             </h3>
-            <p className="text-sm leading-relaxed text-gray-500">
-              In-depth anime and manga analysis, reviews, and theories for the global otaku community.
-              Exploring the stories that define a generation.
+            <p className="text-sm leading-relaxed text-gray-500 mb-4">
+              In-depth anime and manga analysis, reviews, theories, and guides for the global otaku community.
+              Covering 20+ popular series with expert breakdowns of characters, plot, power systems, endings, and more.
+            </p>
+            <p className="text-xs text-gray-600">
+              Topics: anime review, manga analysis, anime theory, character deep dive, anime ending explained, anime ranking 2026, power system breakdown, anime comparison
             </p>
           </div>
 
+          {/* All Ongoing Series */}
           <div>
             <h4 className="text-xs font-black text-[#ff3a4f] mb-4 tracking-widest uppercase">Ongoing Series</h4>
             <ul className="space-y-2">
@@ -33,6 +40,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* All Completed Series */}
           <div>
             <h4 className="text-xs font-black text-[#ffd23f] mb-4 tracking-widest uppercase">Completed Series</h4>
             <ul className="space-y-2">
@@ -44,10 +52,8 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
 
-          <div>
-            <h4 className="text-xs font-black text-[#00d4ff] mb-4 tracking-widest uppercase">Categories</h4>
+            <h4 className="text-xs font-black text-[#00d4ff] mt-6 mb-4 tracking-widest uppercase">Categories</h4>
             <ul className="space-y-2">
               <li><Link href="/category/review" className="text-sm text-gray-500 hover:text-[#00d4ff] transition-colors">Reviews</Link></li>
               <li><Link href="/category/analysis" className="text-sm text-gray-500 hover:text-[#00d4ff] transition-colors">Analysis</Link></li>
@@ -55,8 +61,32 @@ export default function Footer() {
               <li><Link href="/category/guide" className="text-sm text-gray-500 hover:text-[#00d4ff] transition-colors">Guides</Link></li>
               <li><Link href="/category/comparison" className="text-sm text-gray-500 hover:text-[#00d4ff] transition-colors">Comparisons</Link></li>
             </ul>
+          </div>
 
-            <h4 className="text-xs font-black text-gray-500 mt-6 mb-4 tracking-widest uppercase">Where to Watch</h4>
+          {/* Tags + External Links */}
+          <div>
+            <h4 className="text-xs font-black text-[#00d4ff] mb-4 tracking-widest uppercase">
+              <Link href="/tags" className="hover:text-white transition-colors">Popular Tags</Link>
+            </h4>
+            <div className="flex flex-wrap gap-1.5 mb-6">
+              {popularTags.map(tag => (
+                <Link
+                  key={tag}
+                  href={`/tag/${tagToSlug(tag)}`}
+                  className="text-[10px] text-gray-600 hover:text-[#00d4ff] transition-colors bg-[#0e0e1a] px-2 py-0.5 rounded border border-[#1a1a2a]"
+                >
+                  #{tag}
+                </Link>
+              ))}
+              <Link
+                href="/tags"
+                className="text-[10px] text-[#00d4ff] hover:text-white transition-colors bg-[#0e0e1a] px-2 py-0.5 rounded border border-[#00d4ff]/30"
+              >
+                All Tags
+              </Link>
+            </div>
+
+            <h4 className="text-xs font-black text-gray-500 mb-4 tracking-widest uppercase">Where to Watch</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="https://www.crunchyroll.com/" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-500 hover:text-[#f47521] transition-colors">Crunchyroll</a></li>
               <li><a href="https://www.viz.com/" target="_blank" rel="noopener noreferrer nofollow" className="text-gray-500 hover:text-[#e50914] transition-colors">VIZ Media</a></li>

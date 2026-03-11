@@ -97,3 +97,35 @@ export function searchArticles(query: string): Article[] {
       a.tags.some(t => t.toLowerCase().includes(q))
   );
 }
+
+// --- Tag utilities ---
+
+export function tagToSlug(tag: string): string {
+  return tag
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+export function slugToTag(slug: string): string | undefined {
+  const allTags = getAllTags();
+  return allTags.find(tag => tagToSlug(tag) === slug);
+}
+
+export function getAllTags(): string[] {
+  const tagSet = new Set<string>();
+  allArticles.forEach(a => a.tags.forEach(t => tagSet.add(t)));
+  return Array.from(tagSet).sort((a, b) => a.localeCompare(b));
+}
+
+export function getArticlesByTag(tag: string): Article[] {
+  return allArticles
+    .filter(a => a.tags.some(t => t.toLowerCase() === tag.toLowerCase()))
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+}
+
+export function getAllTagSlugs(): { slug: string; tag: string }[] {
+  return getAllTags().map(tag => ({ slug: tagToSlug(tag), tag }));
+}
