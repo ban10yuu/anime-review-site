@@ -97,7 +97,12 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-[#252538] text-center text-xs text-gray-600">
           <p>Disclaimer: All opinions expressed are those of the author and do not represent official positions.</p>
           <p className="mt-1">This site participates in affiliate programs. We may earn commissions from qualifying purchases.</p>
-          <p className="mt-4 text-gray-500">&copy; {new Date().getFullYear()} AnimeInsight. All rights reserved.</p>
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <Link href="/privacy/" className="text-gray-500 hover:text-[#00d4ff] transition-colors">Privacy Policy</Link>
+            <span className="text-gray-700">|</span>
+            <Link href="/contact/" className="text-gray-500 hover:text-[#00d4ff] transition-colors">Contact</Link>
+          </div>
+          <p className="mt-3 text-gray-500">&copy; {new Date().getFullYear()} AnimeInsight. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -19,6 +19,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1.0,
     },
+    {
+      url: `${BASE_URL}/privacy/`,
+      lastModified: '2026-03-11',
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/contact/`,
+      lastModified: '2026-03-11',
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ];
 
   const animePages: MetadataRoute.Sitemap = animeList.map((anime) => ({
