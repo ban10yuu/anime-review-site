@@ -94,6 +94,18 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Sister Sites */}
+        <div className="mt-10 pt-6 border-t border-[#252538]">
+          <h4 className="text-xs font-black text-gray-500 mb-3 tracking-widest uppercase">Sister Sites</h4>
+          <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+            <a href="https://manga-matome-site.vercel.app" target="_blank" rel="noopener" className="text-xs text-gray-500 hover:text-[#ff3a4f] transition-colors">Manga Insight Lab</a>
+            <a href="https://ai-tools-site-dusky.vercel.app" target="_blank" rel="noopener" className="text-xs text-gray-500 hover:text-[#00d4ff] transition-colors">AI Tools Lab</a>
+            <a href="https://vod-navi-site.vercel.app" target="_blank" rel="noopener" className="text-xs text-gray-500 hover:text-[#ffd23f] transition-colors">Streaming Guide</a>
+            <a href="https://fukusen-lab.vercel.app" target="_blank" rel="noopener" className="text-xs text-gray-500 hover:text-[#ff3a4f] transition-colors">Foreshadowing Lab</a>
+            <a href="https://joseikin-navi-site.vercel.app" target="_blank" rel="noopener" className="text-xs text-gray-500 hover:text-[#00d4ff] transition-colors">Grants Navigator</a>
+          </div>
+        </div>
+
         <div className="mt-12 pt-8 border-t border-[#252538] text-center text-xs text-gray-600">
           <p>Disclaimer: All opinions expressed are those of the author and do not represent official positions.</p>
           <p className="mt-1">This site participates in affiliate programs. We may earn commissions from qualifying purchases.</p>
