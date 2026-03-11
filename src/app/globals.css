@@ -23,40 +23,6 @@ body {
   position: relative;
 }
 
-/* Anime dot pattern overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image: radial-gradient(circle, rgba(0,212,255,0.015) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-/* Speed lines for hero */
-.speed-lines {
-  position: relative;
-  overflow: hidden;
-}
-.speed-lines::before {
-  content: '';
-  position: absolute;
-  inset: -50%;
-  background: repeating-linear-gradient(
-    -55deg,
-    transparent,
-    transparent 14px,
-    rgba(255,58,79,0.03) 14px,
-    rgba(255,58,79,0.03) 15px
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-.speed-lines > * {
-  position: relative;
-  z-index: 2;
-}
 
 /* Anime panel card */
 .anime-panel {
@@ -67,8 +33,6 @@ body::before {
 }
 .anime-panel:hover {
   border-color: #ff3a4f;
-  box-shadow: 0 0 24px rgba(255,58,79,0.1), 0 4px 20px rgba(0,0,0,0.4);
-  transform: translateY(-2px);
 }
 
 /* Accent panel */
@@ -85,7 +49,7 @@ body::before {
   margin-bottom: 0.75rem;
   padding: 0.5rem 0 0.5rem 0.85rem;
   border-left: 4px solid #ff3a4f;
-  background: linear-gradient(to right, rgba(255,58,79,0.06), transparent);
+  background: rgba(255,58,79,0.06);
   font-family: "Inter", sans-serif;
 }
 
@@ -113,14 +77,12 @@ body::before {
 
 .article-content blockquote {
   background: #1a1a2a;
-  border: 2px solid #252538;
   border-left: 4px solid #00d4ff;
-  border-radius: 2px 12px 12px 2px;
+  border-radius: 4px;
   padding: 1.25rem 1.5rem 1.25rem 1.75rem;
   margin: 1.5rem 0;
   font-size: 0.9375rem;
   color: #d0d0e0;
-  position: relative;
 }
 
 /* Dark scrollbar */
@@ -169,6 +131,3 @@ body::before {
 .rank-3 { background: #ffd23f; color: #0a0a14; }
 .rank-other { background: #252538; color: #6a6a80; }
 
-/* Neon glow text */
-.neon-red { text-shadow: 0 0 20px rgba(255,58,79,0.3); }
-.neon-cyan { text-shadow: 0 0 20px rgba(0,212,255,0.3); }

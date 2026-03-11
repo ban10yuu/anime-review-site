@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="speed-lines bg-gradient-to-b from-[#080810] via-[#0e0e1a] to-[#0a0a14] py-16 border-b-2 border-[#252538]">
+      <section className="bg-[#0a0a14] py-16 border-b-2 border-[#252538]">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center mb-10">
             <p className="text-[#ff3a4f] text-xs font-black tracking-[0.3em] uppercase mb-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>

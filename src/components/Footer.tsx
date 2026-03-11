@@ -8,7 +8,7 @@ export default function Footer() {
   const popularTags = getAllTags().slice(0, 20);
 
   return (
-    <footer className="bg-[#080810] text-gray-400 border-t-2 border-[#ff3a4f]">
+    <footer className="bg-[#080810] text-gray-400 border-t border-[#252538]">
       <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Site Description */}

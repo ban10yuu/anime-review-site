@@ -22,14 +22,14 @@ export default function Sidebar() {
               href={af.url}
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="block relative overflow-hidden rounded-lg group transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-black/30"
+              className="block relative overflow-hidden rounded-lg group transition-all"
             >
               <div
                 className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity"
                 style={{ background: `linear-gradient(135deg, ${af.color} 0%, transparent 60%)` }}
               />
               <div
-                className="absolute left-0 top-0 bottom-0 w-1 group-hover:w-1.5 transition-all"
+                className="absolute left-0 top-0 bottom-0 w-1"
                 style={{ backgroundColor: af.color }}
               />
               <div className="relative bg-[#161624] border border-[#252538] group-hover:border-[#353550] rounded-lg p-4 pl-5">
@@ -37,8 +37,8 @@ export default function Sidebar() {
                   <span className="font-black text-base text-white">{af.title}</span>
                   {af.badge && (
                     <span
-                      className="text-xs font-black px-2.5 py-1 rounded-full text-white shadow-lg"
-                      style={{ backgroundColor: af.color, boxShadow: `0 0 12px ${af.color}60` }}
+                      className="text-xs font-black px-2.5 py-1 rounded text-white"
+                      style={{ backgroundColor: af.color }}
                     >
                       {af.badge}
                     </span>
@@ -46,11 +46,11 @@ export default function Sidebar() {
                 </div>
                 <p className="text-xs text-gray-400 mb-3 leading-relaxed">{af.description}</p>
                 <div
-                  className="flex items-center justify-center gap-1 text-sm font-bold py-2 rounded-md transition-all group-hover:brightness-110"
-                  style={{ backgroundColor: af.color, color: '#fff', boxShadow: `0 2px 8px ${af.color}40` }}
+                  className="flex items-center justify-center gap-1 text-sm font-bold py-2 rounded-md transition-all"
+                  style={{ backgroundColor: af.color, color: '#fff' }}
                 >
                   Check It Out
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
@@ -128,13 +128,13 @@ export default function Sidebar() {
               href={af.url}
               target="_blank"
               rel="noopener noreferrer nofollow"
-              className="block relative overflow-hidden rounded-lg group transition-all hover:scale-[1.02]"
+              className="block relative overflow-hidden rounded-lg group transition-all"
             >
               <div className="relative bg-[#161624] border border-[#252538] group-hover:border-[#353550] rounded-lg p-4 pl-5">
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-bold text-sm text-white">{af.title}</span>
                   {af.badge && (
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: af.color }}>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded text-white" style={{ backgroundColor: af.color }}>
                       {af.badge}
                     </span>
                   )}

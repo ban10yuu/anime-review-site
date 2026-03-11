@@ -10,7 +10,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#080810]/95 backdrop-blur-md text-white border-b-2 border-[#ff3a4f]">
+    <header className="sticky top-0 z-50 bg-[#080810] text-white border-b border-[#252538]">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-14 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-black text-xl tracking-tight" style={{ fontFamily: 'Orbitron, Inter, sans-serif' }}>
@@ -29,7 +29,7 @@ export default function Header() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute left-0 top-full mt-1 w-64 bg-[#12121e] border-2 border-[#252538] rounded shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 max-h-96 overflow-y-auto">
+              <div className="absolute left-0 top-full mt-1 w-64 bg-[#12121e] border border-[#252538] rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 max-h-96 overflow-y-auto">
                 {animeList.map(anime => (
                   <Link
                     key={anime.slug}
