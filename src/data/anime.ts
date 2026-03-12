@@ -50,7 +50,7 @@ export const animeList: AnimeInfo[] = [
     description: 'A spy, an assassin, and a telepath form a fake family, each hiding their true identity while trying to fulfill their own goals.',
     accentColor: '#f472b6',
     year: 2022,
-    episodes: '37+',
+    episodes: '44+',
     rating: '8.5',
   },
   {
@@ -89,7 +89,7 @@ export const animeList: AnimeInfo[] = [
     description: 'A doctor and his patient are reborn as twins of a famous idol singer. As they grow, they uncover dark truths about the entertainment industry.',
     accentColor: '#ec4899',
     year: 2023,
-    episodes: '23+',
+    episodes: '24+',
     rating: '8.7',
   },
   {
@@ -115,7 +115,7 @@ export const animeList: AnimeInfo[] = [
     description: 'Humanity fights for survival against giant humanoid Titans that devour people. Eren Yeager vows to exterminate them after they destroy his hometown.',
     accentColor: '#84cc16',
     year: 2013,
-    episodes: '94',
+    episodes: '90',
     rating: '9.0',
   },
   {
@@ -128,7 +128,7 @@ export const animeList: AnimeInfo[] = [
     description: 'Izuku Midoriya, born without superpowers in a world where they are common, inherits a quirk from the greatest hero and enrolls in a prestigious hero academy.',
     accentColor: '#06b6d4',
     year: 2016,
-    episodes: '138',
+    episodes: '170',
     rating: '8.0',
   },
   {
@@ -227,7 +227,7 @@ export const animeList: AnimeInfo[] = [
     title: 'Tokyo Revengers',
     titleJp: '東京リベンジャーズ',
     studio: 'LIDENFILMS',
-    status: 'completed',
+    status: 'ongoing',
     genre: ['Action', 'Drama', 'Sci-Fi'],
     description: 'Takemichi Hanagaki travels back in time to save his ex-girlfriend by altering the events that led to the rise of Tokyo\'s deadliest gang.',
     accentColor: '#f43f5e',
