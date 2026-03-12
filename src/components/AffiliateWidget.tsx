@@ -1,5 +1,5 @@
 import { AnimeInfo } from '@/lib/types';
-import { getAffiliateLinks } from '@/data/affiliates';
+import { getAffiliateLinks, MOSHIMO_IMPRESSION_URL } from '@/data/affiliates';
 
 export default function AffiliateWidget({ anime }: { anime: AnimeInfo }) {
   const links = getAffiliateLinks(anime);
@@ -38,6 +38,14 @@ export default function AffiliateWidget({ anime }: { anime: AnimeInfo }) {
           </a>
         ))}
       </div>
+
+      <p className="text-[10px] text-gray-600 mt-4 text-center">
+        * This site participates in affiliate programs
+      </p>
+
+      {/* もしもアフィリエイト impression tracker */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={MOSHIMO_IMPRESSION_URL} width={1} height={1} style={{ border: 'none' }} alt="" loading="lazy" />
     </div>
   );
 }

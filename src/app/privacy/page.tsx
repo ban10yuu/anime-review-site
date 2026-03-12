@@ -113,10 +113,11 @@ export default function PrivacyPolicyPage() {
             Affiliate Programs
           </h2>
           <p>
-            AnimeInsight participates in affiliate marketing programs, which means we may earn
-            commissions on qualifying purchases made through links on this website. This does
-            not affect the price you pay for any products or services. We only recommend
-            products and services that we believe will add value to our readers.
+            AnimeInsight participates in affiliate marketing programs, including A8.net and
+            Moshimo Affiliate, which means we may earn commissions on qualifying purchases
+            made through links on this website. This does not affect the price you pay for
+            any products or services. We only recommend products and services that we believe
+            will add value to our readers.
           </p>
         </section>
 

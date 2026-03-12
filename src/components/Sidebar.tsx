@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { animeList } from '@/data/anime';
 import { getPopularArticles } from '@/lib/articles';
-import { generalAffiliates } from '@/data/affiliates';
+import { generalAffiliates, MOSHIMO_IMPRESSION_URL } from '@/data/affiliates';
 import { CATEGORY_LABELS } from '@/lib/types';
 import type { ArticleCategory } from '@/lib/types';
 
@@ -167,6 +167,10 @@ export default function Sidebar() {
           ))}
         </div>
       </div>
+
+      {/* もしもアフィリエイト インプレッショントラッキング */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={MOSHIMO_IMPRESSION_URL} width={1} height={1} style={{ border: 'none' }} alt="" loading="lazy" />
     </aside>
   );
 }

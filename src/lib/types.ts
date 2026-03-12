@@ -34,7 +34,7 @@ export interface AnimeInfo {
 }
 
 export interface AffiliateService {
-  service: 'amazon' | 'crunchyroll' | 'bookwalker' | 'rightstuf' | 'viz';
+  service: 'amazon' | 'crunchyroll' | 'bookwalker' | 'rightstuf' | 'viz' | 'ameba' | 'rakuten';
   label: string;
   url: string;
   badge?: string;
