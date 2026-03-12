@@ -97,6 +97,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Popular Articles — SEO internal linking boost */}
+      <section className="bg-[#0a0a14] border-b border-[#252538] py-8">
+        <div className="mx-auto max-w-7xl px-4">
+          <h2 className="text-sm font-black text-white mb-4 flex items-center gap-2">
+            <span className="text-[#00d4ff]">//</span>
+            Most Popular
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {(() => {
+              const seen = new Set(featuredArticles.map(a => a.slug));
+              const seenAnime = new Set<string>();
+              const popularArticles: typeof articles = [];
+              for (const a of articles) {
+                if (popularArticles.length >= 8) break;
+                if (seen.has(a.slug)) continue;
+                if (seenAnime.has(a.animeSlug) && popularArticles.length < 6) continue;
+                popularArticles.push(a);
+                seen.add(a.slug);
+                seenAnime.add(a.animeSlug);
+              }
+              return popularArticles.map((article, idx) => {
+                const anime = animeList.find(a => a.slug === article.animeSlug);
+                return (
+                  <Link
+                    key={article.slug}
+                    href={`/article/${article.slug}`}
+                    className="group flex items-start gap-3 anime-panel !bg-[#12121e] p-3 hover:!border-[#ff3a4f]"
+                  >
+                    <span className="text-lg font-black text-[#00d4ff] opacity-50 flex-shrink-0 w-6 text-right">
+                      {idx + 1}
+                    </span>
+                    <div className="min-w-0">
+                      <span className="text-[10px] text-gray-600">{anime?.title}</span>
+                      <h3 className="text-xs font-bold text-gray-300 group-hover:text-[#ff3a4f] transition-colors line-clamp-2 leading-snug mt-0.5">
+                        {article.title}
+                      </h3>
+                    </div>
+                  </Link>
+                );
+              });
+            })()}
+          </div>
+        </div>
+      </section>
+
       {/* Main Content */}
       <section className="mx-auto max-w-7xl px-4 py-10 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8">
