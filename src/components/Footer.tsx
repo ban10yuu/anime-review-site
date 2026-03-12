@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Site Description */}
           <div>
-            <h3 className="text-lg font-black text-white mb-4 flex items-center gap-2" style={{ fontFamily: 'Orbitron, Inter, sans-serif' }}>
+            <h3 className="text-lg font-black text-white mb-4 flex items-center gap-2" style={{ fontFamily: 'var(--font-orbitron), var(--font-inter), sans-serif' }}>
               <span className="text-[#ff3a4f]">//</span>
               Anime<span className="text-[#00d4ff]">Insight</span>
             </h3>

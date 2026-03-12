@@ -13,7 +13,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-[#080810] text-white border-b border-[#252538]">
       <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-14 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-black text-xl tracking-tight" style={{ fontFamily: 'Orbitron, Inter, sans-serif' }}>
+          <Link href="/" className="flex items-center gap-2 font-black text-xl tracking-tight" style={{ fontFamily: 'var(--font-orbitron), var(--font-inter), sans-serif' }}>
             <span className="text-[#ff3a4f] text-2xl leading-none">//</span>
             <span className="text-white">
               Anime<span className="text-[#00d4ff]">Insight</span>

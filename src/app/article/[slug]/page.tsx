@@ -10,6 +10,7 @@ import GoogleAd from '@/components/GoogleAd';
 import ArticleCard from '@/components/ArticleCard';
 import Sidebar from '@/components/Sidebar';
 import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
+import AuthorBox from '@/components/AuthorBox';
 
 const SITE_URL = 'https://anime-review-site.vercel.app';
 
@@ -156,6 +157,8 @@ export default async function ArticlePage({ params }: PageProps) {
               </div>
 
               {anime && <AffiliateWidget anime={anime} />}
+
+              <AuthorBox />
 
               {/* Clickable Tags */}
               <div className="flex items-center gap-2 flex-wrap mt-8 pt-6 border-t border-[#252538]">

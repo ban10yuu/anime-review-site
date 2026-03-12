@@ -17,7 +17,7 @@ export default function Home() {
       <section className="bg-[#0a0a14] py-16 border-b-2 border-[#252538]">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center mb-10">
-            <p className="text-[#ff3a4f] text-xs font-black tracking-[0.3em] uppercase mb-3" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <p className="text-[#ff3a4f] text-xs font-black tracking-[0.3em] uppercase mb-3" style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}>
               Anime & Manga Analysis
             </p>
             <h1 className="text-3xl md:text-5xl font-black mb-4 leading-tight text-white">

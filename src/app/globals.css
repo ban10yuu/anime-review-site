@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: "Inter", "Segoe UI", "Roboto", sans-serif;
-  --font-heading: "Orbitron", "Inter", sans-serif;
+  --font-sans: var(--font-inter), "Segoe UI", "Roboto", sans-serif;
+  --font-heading: var(--font-orbitron), var(--font-inter), sans-serif;
   --color-neon-red: #ff3a4f;
   --color-neon-cyan: #00d4ff;
   --color-neon-yellow: #ffd23f;
@@ -19,7 +19,7 @@ html {
 body {
   background-color: #0a0a14;
   color: #b0b0c8;
-  font-family: "Inter", "Segoe UI", "Roboto", sans-serif;
+  font-family: var(--font-inter), "Segoe UI", "Roboto", sans-serif;
   position: relative;
 }
 
@@ -50,7 +50,7 @@ body {
   padding: 0.5rem 0 0.5rem 0.85rem;
   border-left: 4px solid #ff3a4f;
   background: rgba(255,58,79,0.06);
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-inter), sans-serif;
 }
 
 .article-content h3 {

@@ -1,7 +1,20 @@
 import type { Metadata } from 'next';
+import { Inter, Orbitron } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  display: 'swap',
+  variable: '--font-orbitron',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://anime-review-site.vercel.app'),
@@ -189,14 +202,8 @@ export default function RootLayout({
           }}
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Orbitron:wght@700;800;900&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className={`${inter.variable} ${orbitron.variable} antialiased min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
