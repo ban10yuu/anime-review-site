@@ -3,9 +3,8 @@
 @theme inline {
   --font-sans: var(--font-inter), "Segoe UI", "Roboto", sans-serif;
   --font-heading: var(--font-orbitron), var(--font-inter), sans-serif;
-  --color-neon-red: #ff3a4f;
-  --color-neon-cyan: #00d4ff;
-  --color-neon-yellow: #ffd23f;
+  --color-brand-red: #ff3a4f;
+  --color-accent-cyan: #00d4ff;
   --color-bg-primary: #0a0a14;
   --color-bg-surface: #12121e;
   --color-bg-elevated: #1a1a2a;
@@ -20,24 +19,17 @@ body {
   background-color: #0a0a14;
   color: #b0b0c8;
   font-family: var(--font-inter), "Segoe UI", "Roboto", sans-serif;
-  position: relative;
 }
 
-
-/* Anime panel card */
+/* Card base -- subtle hover */
 .anime-panel {
   background: #12121e;
-  border: 2px solid #252538;
+  border: 1px solid #252538;
   border-radius: 6px;
-  transition: all 0.25s ease;
+  transition: border-color 0.2s ease;
 }
 .anime-panel:hover {
-  border-color: #ff3a4f;
-}
-
-/* Accent panel */
-.accent-panel {
-  border-left: 4px solid #ff3a4f;
+  border-color: #353550;
 }
 
 /* Article content styles */
@@ -48,8 +40,8 @@ body {
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
   padding: 0.5rem 0 0.5rem 0.85rem;
-  border-left: 4px solid #ff3a4f;
-  background: rgba(255,58,79,0.06);
+  border-left: 3px solid #ff3a4f;
+  background: rgba(255,58,79,0.04);
   font-family: var(--font-inter), sans-serif;
 }
 
@@ -60,7 +52,7 @@ body {
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
   padding-left: 0.75rem;
-  border-left: 3px solid #00d4ff;
+  border-left: 2px solid #00d4ff;
 }
 
 .article-content p {
@@ -71,13 +63,13 @@ body {
 }
 
 .article-content strong {
-  color: #ffd23f;
+  color: #eaeaf0;
   font-weight: 700;
 }
 
 .article-content blockquote {
   background: #1a1a2a;
-  border-left: 4px solid #00d4ff;
+  border-left: 3px solid #00d4ff;
   border-radius: 4px;
   padding: 1.25rem 1.5rem 1.25rem 1.75rem;
   margin: 1.5rem 0;
@@ -127,7 +119,6 @@ body {
   flex-shrink: 0;
 }
 .rank-1 { background: #ff3a4f; color: #fff; }
-.rank-2 { background: #ff6b35; color: #fff; }
-.rank-3 { background: #ffd23f; color: #0a0a14; }
-.rank-other { background: #252538; color: #6a6a80; }
-
+.rank-2 { background: #00d4ff; color: #0a0a14; }
+.rank-3 { background: #252538; color: #d0d0e0; }
+.rank-other { background: #1a1a2a; color: #6a6a80; }
