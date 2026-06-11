@@ -19,30 +19,33 @@ export default function Home() {
   return (
     <>
       {/* Hero: Single Featured Review */}
-      <section className="bg-[#0a0a14] border-b border-[#1e1e30]">
-        <div className="mx-auto max-w-7xl px-4 pt-12 pb-10">
+      <section className="border-b border-white/70">
+        <div className="mx-auto max-w-7xl px-4 pt-14 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
             {/* Hero left */}
             <div className="lg:col-span-3">
-              <p className="text-xs font-bold text-[#ff3a4f] tracking-wide uppercase mb-3" style={{ fontFamily: 'var(--font-orbitron), sans-serif' }}>
+              <p className="inline-flex items-center gap-2 text-xs font-bold sunset-text tracking-wide uppercase mb-3">
+                <span aria-hidden className="w-6 h-1 rounded-full sunset-gradient inline-block" />
                 Featured Review
               </p>
-              {heroAnime && (
-                <Link href={`/anime/${heroAnime.slug}`} className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
-                  {heroAnime.title}
-                </Link>
-              )}
+              <div>
+                {heroAnime && (
+                  <Link href={`/anime/${heroAnime.slug}`} className="text-xs text-ink-muted hover:text-violet transition-colors">
+                    {heroAnime.title}
+                  </Link>
+                )}
+              </div>
               <Link href={`/article/${heroArticle.slug}`}>
-                <h1 className="text-2xl md:text-3xl font-black text-white mt-2 mb-3 leading-tight hover:text-gray-200 transition-colors">
+                <h1 className="text-3xl md:text-4xl font-black text-ink mt-2 mb-4 leading-tight hover:text-violet transition-colors">
                   {heroArticle.title}
                 </h1>
               </Link>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5 max-w-xl">
+              <p className="text-sm text-ink-soft leading-relaxed mb-6 max-w-xl">
                 {heroArticle.excerpt}
               </p>
               <Link
                 href={`/article/${heroArticle.slug}`}
-                className="inline-block bg-[#ff3a4f] text-white text-sm font-bold px-6 py-2.5 rounded hover:bg-[#e52e42] transition-colors"
+                className="btn-sunset text-sm px-7 py-3"
               >
                 Read Full Review
               </Link>
@@ -56,10 +59,10 @@ export default function Home() {
                   <Link
                     key={article.slug}
                     href={`/article/${article.slug}`}
-                    className="block bg-[#12121e] border border-[#252538] rounded p-4 hover:border-[#353550] transition-colors group"
+                    className="block glass-card glass-hover p-4 group"
                   >
-                    <span className="text-[10px] text-gray-600">{anime?.title}</span>
-                    <h3 className="text-sm font-bold text-gray-200 group-hover:text-gray-100 leading-snug line-clamp-2 mt-0.5">
+                    <span className="text-[10px] text-ink-muted">{anime?.title}</span>
+                    <h3 className="text-sm font-bold text-ink group-hover:text-violet transition-colors leading-snug line-clamp-2 mt-0.5">
                       {article.title}
                     </h3>
                   </Link>
@@ -71,22 +74,22 @@ export default function Home() {
       </section>
 
       {/* Browse: Anime tags + Categories combined */}
-      <section className="bg-[#0a0a14] border-b border-[#1e1e30] py-4">
+      <section className="border-b border-white/70 py-4 bg-white/35 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex items-center gap-3 flex-wrap">
-            <span className="text-xs font-bold text-gray-600 tracking-wide uppercase">Browse:</span>
+            <span className="text-xs font-bold text-ink-muted tracking-wide uppercase">Browse:</span>
             {(Object.entries(CATEGORY_LABELS) as [ArticleCategory, string][]).map(([key, label]) => (
               <Link
                 key={key}
                 href={`/category/${key}`}
-                className={`text-xs font-bold px-3 py-1 rounded ${CATEGORY_COLORS[key]}`}
+                className={`text-xs font-bold px-3.5 py-1 rounded-full hover:brightness-105 hover:-translate-y-px transition-all ${CATEGORY_COLORS[key]}`}
               >
                 {label}
               </Link>
             ))}
             <Link
               href="/tags"
-              className="text-xs font-medium px-3 py-1 rounded text-gray-500 hover:text-gray-300 transition-colors"
+              className="tag-chip text-xs font-medium px-3.5 py-1"
             >
               All Tags
             </Link>
@@ -99,7 +102,8 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="flex-1 min-w-0">
             {/* Latest Articles */}
-            <h2 className="text-base font-black text-white mb-5">
+            <h2 className="text-lg font-black text-ink mb-5 flex items-center gap-2">
+              <span aria-hidden className="w-1.5 h-5 rounded-full sunset-gradient" />
               Latest Articles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
@@ -112,8 +116,11 @@ export default function Home() {
             {reviewArticles.length > 0 && (
               <section className="mb-12">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-base font-black text-white">Reviews</h2>
-                  <Link href="/category/review" className="text-xs text-[#ff3a4f] hover:underline">
+                  <h2 className="text-lg font-black text-ink flex items-center gap-2">
+                    <span aria-hidden className="w-1.5 h-5 rounded-full sunset-gradient" />
+                    Reviews
+                  </h2>
+                  <Link href="/category/review" className="text-xs font-bold text-coral hover:text-rose hover:underline transition-colors">
                     View All
                   </Link>
                 </div>
@@ -128,10 +135,10 @@ export default function Home() {
                         <Link
                           key={article.slug}
                           href={`/article/${article.slug}`}
-                          className="block bg-[#12121e] border border-[#252538] rounded p-3 hover:border-[#353550] transition-colors"
+                          className="block glass-card glass-hover p-3 group"
                         >
-                          <span className="text-[10px] text-gray-600">{anime?.title}</span>
-                          <h3 className="text-xs font-bold text-gray-300 line-clamp-2 leading-snug mt-0.5">
+                          <span className="text-[10px] text-ink-muted">{anime?.title}</span>
+                          <h3 className="text-xs font-bold text-ink group-hover:text-violet transition-colors line-clamp-2 leading-snug mt-0.5">
                             {article.title}
                           </h3>
                         </Link>
@@ -146,8 +153,11 @@ export default function Home() {
             {analysisArticles.length > 0 && (
               <section className="mb-12">
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-base font-black text-white">Analysis & Deep Dives</h2>
-                  <Link href="/category/analysis" className="text-xs text-[#00d4ff] hover:underline">
+                  <h2 className="text-lg font-black text-ink flex items-center gap-2">
+                    <span aria-hidden className="w-1.5 h-5 rounded-full sunset-gradient" />
+                    Analysis & Deep Dives
+                  </h2>
+                  <Link href="/category/analysis" className="text-xs font-bold text-violet hover:text-rose hover:underline transition-colors">
                     View All
                   </Link>
                 </div>
@@ -163,7 +173,7 @@ export default function Home() {
               <div className="text-center mt-8">
                 <Link
                   href="/category/review"
-                  className="inline-block bg-[#ff3a4f] text-white px-8 py-3 rounded text-sm font-bold hover:bg-[#e52e42] transition-colors"
+                  className="btn-sunset text-sm px-8 py-3"
                 >
                   View All Articles ({articles.length})
                 </Link>
@@ -172,7 +182,8 @@ export default function Home() {
 
             {/* All Anime Series -- compact list */}
             <div className="mt-12">
-              <h2 className="text-base font-black text-white mb-5">
+              <h2 className="text-lg font-black text-ink mb-5 flex items-center gap-2">
+                <span aria-hidden className="w-1.5 h-5 rounded-full sunset-gradient" />
                 All Anime & Manga Series
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -180,17 +191,17 @@ export default function Home() {
                   <Link
                     key={anime.slug}
                     href={`/anime/${anime.slug}`}
-                    className="flex items-center gap-3 bg-[#12121e] border border-[#252538] rounded p-3 hover:border-[#353550] transition-colors group"
+                    className="flex items-center gap-3 glass-card glass-hover p-3 group"
                   >
                     <span
                       className="w-2 h-2 rounded-full flex-shrink-0"
                       style={{ backgroundColor: anime.accentColor }}
                     />
                     <div className="min-w-0">
-                      <h3 className="text-sm font-bold text-gray-300 group-hover:text-white transition-colors truncate">
+                      <h3 className="text-sm font-bold text-ink group-hover:text-violet transition-colors truncate">
                         {anime.title}
                       </h3>
-                      <p className="text-[10px] text-gray-600">
+                      <p className="text-[10px] text-ink-muted">
                         {anime.studio} | {anime.status === 'ongoing' ? 'Ongoing' : 'Completed'}
                       </p>
                     </div>

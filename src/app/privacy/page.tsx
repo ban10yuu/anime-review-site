@@ -13,19 +13,20 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 relative z-10">
-      <nav className="text-xs text-gray-600 mb-4">
-        <Link href="/" className="hover:text-[#ff3a4f] transition-colors">Home</Link>
+      <nav className="text-xs text-ink-muted mb-4">
+        <Link href="/" className="hover:text-violet transition-colors">Home</Link>
         <span className="mx-1">/</span>
-        <span className="text-gray-500">Privacy Policy</span>
+        <span className="text-ink-soft">Privacy Policy</span>
       </nav>
 
-      <h1 className="text-2xl md:text-3xl font-black text-white mb-8">
+      <h1 className="text-2xl md:text-3xl font-black text-ink mb-8 flex items-center gap-3">
+        <span aria-hidden className="w-2 h-7 rounded-full sunset-gradient" />
         Privacy Policy
       </h1>
 
-      <div className="anime-panel p-6 md:p-8 space-y-8 text-[0.9375rem] leading-relaxed text-gray-400">
+      <div className="glass-card p-6 md:p-8 space-y-8 text-[0.9375rem] leading-relaxed text-ink-soft">
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Personal Information
           </h2>
           <p>
@@ -38,7 +39,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Google Analytics
           </h2>
           <p>
@@ -56,7 +57,7 @@ export default function PrivacyPolicyPage() {
               href="https://tools.google.com/dlpage/gaoptout"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#00d4ff] hover:underline"
+              className="text-violet hover:underline"
             >
               Google Analytics Opt-out Browser Add-on
             </a>.
@@ -64,7 +65,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Google AdSense and Cookies
           </h2>
           <p>
@@ -76,7 +77,7 @@ export default function PrivacyPolicyPage() {
               href="https://www.google.com/settings/ads"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#00d4ff] hover:underline"
+              className="text-violet hover:underline"
             >
               Google Ads Settings
             </a>.
@@ -89,7 +90,7 @@ export default function PrivacyPolicyPage() {
               href="https://www.aboutads.info/choices/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#00d4ff] hover:underline"
+              className="text-violet hover:underline"
             >
               aboutads.info
             </a>.
@@ -97,7 +98,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Third-Party Advertisers
           </h2>
           <p>
@@ -109,7 +110,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Affiliate Programs
           </h2>
           <p>
@@ -122,7 +123,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Disclaimer
           </h2>
           <p>
@@ -135,7 +136,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Changes to This Policy
           </h2>
           <p>
@@ -146,18 +147,18 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Contact
           </h2>
           <p>
             If you have any questions about this Privacy Policy, please contact us via our{' '}
-            <Link href="/contact/" className="text-[#00d4ff] hover:underline">
+            <Link href="/contact/" className="text-violet hover:underline">
               Contact page
             </Link>.
           </p>
         </section>
 
-        <p className="text-sm text-gray-600 pt-4 border-t border-[#252538]">
+        <p className="text-sm text-ink-muted pt-4 border-t border-line">
           Effective date: March 11, 2026
         </p>
       </div>

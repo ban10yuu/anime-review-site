@@ -51,17 +51,17 @@ export default async function TagPage({ params }: PageProps) {
           <div className="flex-1 min-w-0">
             {/* Header */}
             <div className="mb-6">
-              <nav className="text-xs text-gray-600 mb-4">
-                <Link href="/" className="hover:text-[#ff3a4f] transition-colors">Home</Link>
+              <nav className="text-xs text-ink-muted mb-4">
+                <Link href="/" className="hover:text-violet transition-colors">Home</Link>
                 <span className="mx-1">/</span>
-                <Link href="/tags" className="hover:text-[#ff3a4f] transition-colors">Tags</Link>
+                <Link href="/tags" className="hover:text-violet transition-colors">Tags</Link>
                 <span className="mx-1">/</span>
-                <span className="text-gray-500">{tag}</span>
+                <span className="text-ink-soft">{tag}</span>
               </nav>
-              <h1 className="text-2xl md:text-3xl font-black text-white mb-2">
-                #{tag}
+              <h1 className="text-2xl md:text-3xl font-black text-ink mb-2">
+                <span className="sunset-text">#</span>{tag}
               </h1>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-ink-soft">
                 {articles.length} article{articles.length !== 1 ? 's' : ''} tagged with &ldquo;{tag}&rdquo;
               </p>
             </div>
@@ -74,13 +74,13 @@ export default async function TagPage({ params }: PageProps) {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">No articles with this tag yet.</p>
+              <p className="text-ink-muted text-sm">No articles with this tag yet.</p>
             )}
 
             {/* Related Tags */}
             <div className="mt-10">
-              <h2 className="text-lg font-black text-white mb-4 flex items-center gap-2">
-                <span className="text-[#00d4ff]">//</span>
+              <h2 className="text-lg font-black text-ink mb-4 flex items-center gap-2">
+                <span aria-hidden className="w-1.5 h-5 rounded-full sunset-gradient" />
                 Browse More Tags
               </h2>
               <div className="flex flex-wrap gap-2">
@@ -91,14 +91,14 @@ export default async function TagPage({ params }: PageProps) {
                     <Link
                       key={tSlug}
                       href={`/tag/${tSlug}`}
-                      className="text-xs font-bold px-3 py-1.5 rounded border border-[#252538] text-gray-500 hover:border-[#ff3a4f] hover:text-[#ff3a4f] hover:bg-[#ff3a4f]/5 transition-all"
+                      className="tag-chip text-xs font-bold px-3.5 py-1.5"
                     >
                       #{tTag}
                     </Link>
                   ))}
                 <Link
                   href="/tags"
-                  className="text-xs font-bold px-3 py-1.5 rounded border border-[#00d4ff] text-[#00d4ff] hover:bg-[#00d4ff]/10 transition-all"
+                  className="btn-sunset text-xs px-4 py-1.5"
                 >
                   View All Tags
                 </Link>

@@ -33,16 +33,17 @@ export default function TagsPage() {
   return (
     <>
       <div className="mx-auto max-w-7xl px-4 py-8 relative z-10">
-        <nav className="text-xs text-gray-600 mb-4">
-          <Link href="/" className="hover:text-[#ff3a4f] transition-colors">Home</Link>
+        <nav className="text-xs text-ink-muted mb-4">
+          <Link href="/" className="hover:text-violet transition-colors">Home</Link>
           <span className="mx-1">/</span>
-          <span className="text-gray-500">Tags</span>
+          <span className="text-ink-soft">Tags</span>
         </nav>
 
-        <h1 className="text-2xl md:text-3xl font-black text-white mb-2">
+        <h1 className="text-2xl md:text-3xl font-black text-ink mb-2 flex items-center gap-3">
+          <span aria-hidden className="w-2 h-7 rounded-full sunset-gradient" />
           All Tags
         </h1>
-        <p className="text-sm text-gray-500 mb-8">
+        <p className="text-sm text-ink-soft mb-8">
           {tagsWithCounts.length} tags across all anime and manga articles
         </p>
 
@@ -51,13 +52,13 @@ export default function TagsPage() {
             <Link
               key={slug}
               href={`/tag/${slug}`}
-              className="group anime-panel !p-0 overflow-hidden hover:!border-[#ff3a4f] transition-all"
+              className="group glass-card glass-hover rounded-full overflow-hidden"
             >
-              <div className="px-4 py-2.5 flex items-center gap-2">
-                <span className="text-sm font-bold text-gray-300 group-hover:text-[#ff3a4f] transition-colors">
+              <div className="px-4 py-2 flex items-center gap-2">
+                <span className="text-sm font-bold text-ink group-hover:text-violet transition-colors">
                   #{tag}
                 </span>
-                <span className="text-[10px] font-black bg-[#1a1a2a] text-gray-500 px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-black bg-violet/12 text-violet px-2 py-0.5 rounded-full">
                   {count}
                 </span>
               </div>

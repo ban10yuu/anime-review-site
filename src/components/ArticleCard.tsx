@@ -7,32 +7,32 @@ export default function ArticleCard({ article, showAnime = true }: { article: Ar
   const anime = getAnimeBySlug(article.animeSlug);
 
   return (
-    <article className="bg-[#12121e] border border-[#252538] rounded hover:border-[#353550] transition-colors group">
+    <article className="glass-card glass-hover group">
       <div className="p-5">
         <div className="flex items-center gap-2 mb-3 flex-wrap">
-          <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${CATEGORY_COLORS[article.category] || ''}`}>
+          <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${CATEGORY_COLORS[article.category] || ''}`}>
             {CATEGORY_LABELS[article.category]}
           </span>
           {showAnime && anime && (
             <Link
               href={`/anime/${anime.slug}`}
-              className="text-xs text-gray-500 hover:text-gray-300 transition-colors"
+              className="text-xs text-ink-muted hover:text-violet transition-colors"
             >
               {anime.title}
             </Link>
           )}
-          <time className="text-[10px] text-gray-600 ml-auto" dateTime={article.publishedAt}>
+          <time className="text-[10px] text-ink-muted ml-auto" dateTime={article.publishedAt}>
             {new Date(article.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
           </time>
         </div>
 
         <Link href={`/article/${article.slug}`}>
-          <h3 className="text-base font-bold text-gray-200 group-hover:text-white transition-colors leading-snug mb-2 line-clamp-2">
+          <h3 className="text-base font-bold text-ink group-hover:text-violet transition-colors leading-snug mb-2 line-clamp-2">
             {article.title}
           </h3>
         </Link>
 
-        <p className="text-sm text-gray-500 leading-relaxed line-clamp-2 mb-3">
+        <p className="text-sm text-ink-soft leading-relaxed line-clamp-2 mb-3">
           {article.excerpt}
         </p>
 
@@ -41,7 +41,7 @@ export default function ArticleCard({ article, showAnime = true }: { article: Ar
             <Link
               key={tag}
               href={`/tag/${tagToSlug(tag)}`}
-              className="text-[10px] text-gray-600 hover:text-gray-400 transition-colors before:content-['#']"
+              className="text-[10px] text-ink-muted hover:text-violet transition-colors before:content-['#']"
             >
               {tag}
             </Link>

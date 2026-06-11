@@ -1,19 +1,25 @@
 import type { Metadata } from 'next';
-import { Inter, Orbitron } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const inter = Inter({
-  subsets: ['latin'],
+// Self-hosted Google Fonts (Noto Sans JP body, Zen Maru Gothic headings)
+const notoSansJp = localFont({
+  src: [
+    { path: '../fonts/noto-sans-jp-400.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/noto-sans-jp-700.woff2', weight: '700', style: 'normal' },
+  ],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-noto-sans',
 });
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
+const zenMaruGothic = localFont({
+  src: [
+    { path: '../fonts/zen-maru-gothic-700.woff2', weight: '700', style: 'normal' },
+    { path: '../fonts/zen-maru-gothic-900.woff2', weight: '900', style: 'normal' },
+  ],
   display: 'swap',
-  variable: '--font-orbitron',
+  variable: '--font-zen-maru',
 });
 
 export const metadata: Metadata = {
@@ -203,7 +209,7 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className={`${inter.variable} ${orbitron.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${notoSansJp.variable} ${zenMaruGothic.variable} antialiased min-h-screen flex flex-col`}>
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

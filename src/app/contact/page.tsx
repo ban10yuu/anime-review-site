@@ -13,45 +13,46 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 relative z-10">
-      <nav className="text-xs text-gray-600 mb-4">
-        <Link href="/" className="hover:text-[#ff3a4f] transition-colors">Home</Link>
+      <nav className="text-xs text-ink-muted mb-4">
+        <Link href="/" className="hover:text-violet transition-colors">Home</Link>
         <span className="mx-1">/</span>
-        <span className="text-gray-500">Contact</span>
+        <span className="text-ink-soft">Contact</span>
       </nav>
 
-      <h1 className="text-2xl md:text-3xl font-black text-white mb-8">
+      <h1 className="text-2xl md:text-3xl font-black text-ink mb-8 flex items-center gap-3">
+        <span aria-hidden className="w-2 h-7 rounded-full sunset-gradient" />
         Contact Us
       </h1>
 
-      <div className="anime-panel p-6 md:p-8 space-y-6 text-[0.9375rem] leading-relaxed text-gray-400">
+      <div className="glass-card p-6 md:p-8 space-y-6 text-[0.9375rem] leading-relaxed text-ink-soft">
         <p>
           Thank you for visiting AnimeInsight. If you have any questions, feedback,
           corrections, or business inquiries, please feel free to reach out to us using
           the information below.
         </p>
 
-        <div className="bg-[#1a1a2a] border border-[#252538] rounded-lg p-6">
-          <h2 className="text-lg font-bold text-white mb-4 border-l-4 border-[#00d4ff] pl-3">
+        <div className="bg-white/55 border border-violet/15 rounded-2xl p-6">
+          <h2 className="text-lg font-bold text-ink mb-4 border-l-4 border-violet pl-3 rounded-sm">
             Email
           </h2>
           <p className="mb-2">
             <a
               href="mailto:ban10yuu@icloud.com"
-              className="text-[#00d4ff] hover:underline font-mono text-base"
+              className="text-violet hover:underline font-mono text-base"
             >
               ban10yuu@icloud.com
             </a>
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-ink-muted">
             We aim to respond to all inquiries within 3-5 business days.
           </p>
         </div>
 
         <div>
-          <h2 className="text-lg font-bold text-white mb-3 border-l-4 border-[#ff3a4f] pl-3">
+          <h2 className="text-lg font-bold text-ink mb-3 border-l-4 border-rose pl-3 rounded-sm">
             Before You Contact Us
           </h2>
-          <ul className="list-disc list-inside space-y-2 text-gray-400">
+          <ul className="list-disc list-inside space-y-2 text-ink-soft">
             <li>For content corrections or factual errors, please include the article URL and specific details.</li>
             <li>For copyright concerns, please provide proof of ownership and the content in question.</li>
             <li>For business inquiries or advertising, please include your company name and proposal details.</li>
@@ -59,10 +60,10 @@ export default function ContactPage() {
           </ul>
         </div>
 
-        <p className="text-sm text-gray-600 pt-4 border-t border-[#252538]">
+        <p className="text-sm text-ink-muted pt-4 border-t border-line">
           We respect your privacy. Any personal information provided through email
           will be handled in accordance with our{' '}
-          <Link href="/privacy/" className="text-[#00d4ff] hover:underline">
+          <Link href="/privacy/" className="text-violet hover:underline">
             Privacy Policy
           </Link>.
         </p>

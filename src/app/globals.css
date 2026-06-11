@@ -1,14 +1,22 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------
+   Anime Magazine at Dusk - design tokens
+   Soft cream/ivory base, sunset gradient accents (coral -> violet),
+   glassmorphism panels, rounded geometry.
+------------------------------------------------------------------- */
 @theme inline {
-  --font-sans: var(--font-inter), "Segoe UI", "Roboto", sans-serif;
-  --font-heading: var(--font-orbitron), var(--font-inter), sans-serif;
-  --color-brand-red: #ff3a4f;
-  --color-accent-cyan: #00d4ff;
-  --color-bg-primary: #0a0a14;
-  --color-bg-surface: #12121e;
-  --color-bg-elevated: #1a1a2a;
-  --color-border-default: #252538;
+  --font-sans: var(--font-noto-sans), "Hiragino Sans", "Segoe UI", sans-serif;
+  --font-heading: var(--font-zen-maru), var(--font-noto-sans), sans-serif;
+  --color-cream: #fbf6ee;
+  --color-cream-deep: #f3ebdf;
+  --color-ink: #3a3150;
+  --color-ink-soft: #5d5476;
+  --color-ink-muted: #9a8fae;
+  --color-coral: #f2685c;
+  --color-rose: #e0588f;
+  --color-violet: #7c5cd6;
+  --color-line: #ece1d4;
 }
 
 html {
@@ -16,80 +24,167 @@ html {
 }
 
 body {
-  background-color: #0a0a14;
-  color: #b0b0c8;
-  font-family: var(--font-inter), "Segoe UI", "Roboto", sans-serif;
+  background-color: #fbf6ee;
+  background-image:
+    radial-gradient(55rem 38rem at 112% -8%, rgba(124, 92, 214, 0.13), transparent 62%),
+    radial-gradient(48rem 34rem at -12% -4%, rgba(242, 104, 92, 0.12), transparent 60%),
+    radial-gradient(60rem 42rem at 50% 118%, rgba(224, 88, 143, 0.08), transparent 65%),
+    linear-gradient(180deg, #fdf9f2 0%, #fbf5ec 55%, #f8f0e9 100%);
+  background-attachment: fixed;
+  color: #5d5476;
+  font-family: var(--font-noto-sans), "Hiragino Sans", "Segoe UI", sans-serif;
 }
 
-/* Card base -- subtle hover */
-.anime-panel {
-  background: #12121e;
-  border: 1px solid #252538;
-  border-radius: 6px;
-  transition: border-color 0.2s ease;
+h1, h2, h3, h4 {
+  font-family: var(--font-zen-maru), var(--font-noto-sans), sans-serif;
 }
-.anime-panel:hover {
-  border-color: #353550;
+
+/* Soft accessible focus rings */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7c5cd6;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Glass panel - blurred translucent card with thin border */
+.glass-card,
+.anime-panel {
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 1.25rem;
+  box-shadow:
+    0 10px 30px -14px rgba(124, 92, 214, 0.18),
+    0 2px 10px -4px rgba(242, 104, 92, 0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* Interactive variant - gentle lift on hover */
+.glass-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 92, 214, 0.35);
+  box-shadow:
+    0 18px 38px -16px rgba(124, 92, 214, 0.30),
+    0 4px 14px -6px rgba(242, 104, 92, 0.14);
+}
+
+/* Sunset gradient utilities */
+.sunset-gradient {
+  background-image: linear-gradient(120deg, #ff8a63 0%, #e0588f 52%, #7c5cd6 100%);
+}
+
+.sunset-text {
+  background-image: linear-gradient(120deg, #f2685c 0%, #e0588f 48%, #7c5cd6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Pill-shaped gradient button */
+.btn-sunset {
+  display: inline-block;
+  background-image: linear-gradient(120deg, #ff8a63 0%, #e0588f 52%, #7c5cd6 100%);
+  background-size: 130% 130%;
+  background-position: 0% 50%;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 9999px;
+  box-shadow: 0 8px 20px -8px rgba(224, 88, 143, 0.55);
+  transition: background-position 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.btn-sunset:hover {
+  background-position: 90% 50%;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px -10px rgba(124, 92, 214, 0.55);
+}
+
+/* Frosted pill chip (tags, small labels) */
+.tag-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(124, 92, 214, 0.18);
+  border-radius: 9999px;
+  color: #5d5476;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.tag-chip:hover {
+  color: #7c5cd6;
+  border-color: rgba(124, 92, 214, 0.5);
+  background: rgba(124, 92, 214, 0.08);
 }
 
 /* Article content styles */
 .article-content h2 {
   font-size: 1.375rem;
-  font-weight: 800;
-  color: #eaeaf0;
+  font-weight: 700;
+  color: #3a3150;
   margin-top: 2.5rem;
-  margin-bottom: 0.75rem;
-  padding: 0.5rem 0 0.5rem 0.85rem;
-  border-left: 3px solid #ff3a4f;
-  background: rgba(255,58,79,0.04);
-  font-family: var(--font-inter), sans-serif;
+  margin-bottom: 0.85rem;
+  padding: 0.55rem 0.25rem 0.55rem 1rem;
+  border-radius: 0.85rem;
+  position: relative;
+  background: linear-gradient(120deg, rgba(242, 104, 92, 0.10), rgba(124, 92, 214, 0.08));
+}
+.article-content h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, #f2685c, #e0588f, #7c5cd6);
 }
 
 .article-content h3 {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #d0d0e0;
+  color: #4a4163;
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  border-left: 2px solid #00d4ff;
+  padding-left: 0.8rem;
+  border-left: 3px solid #e0588f;
+  border-radius: 2px;
 }
 
 .article-content p {
   font-size: 0.9375rem;
-  line-height: 1.9;
-  color: #b0b0c8;
+  line-height: 1.95;
+  color: #5d5476;
   margin-bottom: 1rem;
 }
 
 .article-content strong {
-  color: #eaeaf0;
+  color: #3a3150;
   font-weight: 700;
 }
 
 .article-content blockquote {
-  background: #1a1a2a;
-  border-left: 3px solid #00d4ff;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(124, 92, 214, 0.18);
+  border-left: 4px solid #7c5cd6;
+  border-radius: 0.85rem;
   padding: 1.25rem 1.5rem 1.25rem 1.75rem;
   margin: 1.5rem 0;
   font-size: 0.9375rem;
-  color: #d0d0e0;
+  color: #4a4163;
 }
 
-/* Dark scrollbar */
+/* Light scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a14;
+  background: #f3ebdf;
 }
 ::-webkit-scrollbar-thumb {
-  background: #252538;
-  border-radius: 4px;
+  background: #ddcfe8;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #353550;
+  background: #c5b2e0;
 }
 
 /* Line clamp */
@@ -106,7 +201,7 @@ body {
   overflow: hidden;
 }
 
-/* Rank badge */
+/* Rank badge - sunset medals */
 .rank-badge {
   width: 1.75rem;
   height: 1.75rem;
@@ -115,10 +210,40 @@ body {
   justify-content: center;
   font-weight: 900;
   font-size: 0.75rem;
-  border-radius: 4px;
+  border-radius: 9999px;
   flex-shrink: 0;
 }
-.rank-1 { background: #ff3a4f; color: #fff; }
-.rank-2 { background: #00d4ff; color: #0a0a14; }
-.rank-3 { background: #252538; color: #d0d0e0; }
-.rank-other { background: #1a1a2a; color: #6a6a80; }
+.rank-1 {
+  background: linear-gradient(135deg, #ff8a63, #e0588f);
+  color: #fff;
+  box-shadow: 0 4px 10px -4px rgba(224, 88, 143, 0.6);
+}
+.rank-2 {
+  background: linear-gradient(135deg, #e0588f, #7c5cd6);
+  color: #fff;
+  box-shadow: 0 4px 10px -4px rgba(124, 92, 214, 0.6);
+}
+.rank-3 {
+  background: rgba(124, 92, 214, 0.16);
+  color: #7c5cd6;
+}
+.rank-other {
+  background: rgba(58, 49, 80, 0.07);
+  color: #9a8fae;
+}
+
+/* Star rating */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  color: #b06a17;
+  background: linear-gradient(120deg, rgba(255, 188, 92, 0.28), rgba(255, 138, 99, 0.20));
+  border: 1px solid rgba(255, 165, 70, 0.45);
+  border-radius: 9999px;
+}
+.star-rating::before {
+  content: "\2605";
+  color: #f59e0b;
+}

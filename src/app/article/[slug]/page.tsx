@@ -80,42 +80,42 @@ export default async function ArticlePage({ params }: PageProps) {
       <div className="mx-auto max-w-7xl px-4 py-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-8">
           <article className="flex-1 min-w-0">
-            <div className="bg-[#12121e] rounded border-2 border-[#252538] p-6 md:p-8">
-              <p className="text-[10px] text-gray-600 mb-4">This site participates in affiliate programs.</p>
+            <div className="glass-card p-6 md:p-8">
+              <p className="text-[10px] text-ink-muted mb-4">This site participates in affiliate programs.</p>
 
-              <nav className="text-xs text-gray-600 mb-4 flex items-center gap-1 flex-wrap">
-                <Link href="/" className="hover:text-[#ff3a4f] transition-colors">Home</Link>
-                <span className="text-gray-700">/</span>
+              <nav className="text-xs text-ink-muted mb-4 flex items-center gap-1 flex-wrap">
+                <Link href="/" className="hover:text-violet transition-colors">Home</Link>
+                <span className="text-ink-muted">/</span>
                 {anime && (
                   <>
-                    <Link href={`/anime/${anime.slug}`} className="hover:text-[#ff3a4f] transition-colors">{anime.title}</Link>
-                    <span className="text-gray-700">/</span>
+                    <Link href={`/anime/${anime.slug}`} className="hover:text-violet transition-colors">{anime.title}</Link>
+                    <span className="text-ink-muted">/</span>
                   </>
                 )}
-                <span className="text-gray-500 line-clamp-1">{article.title}</span>
+                <span className="text-ink-soft line-clamp-1">{article.title}</span>
               </nav>
 
               <div className="flex items-center gap-2 mb-4 flex-wrap">
                 <Link
                   href={`/category/${article.category}`}
-                  className={`text-[10px] font-bold px-2 py-0.5 rounded hover:brightness-125 transition-all ${CATEGORY_COLORS[article.category] || ''}`}
+                  className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full hover:brightness-105 transition-all ${CATEGORY_COLORS[article.category] || ''}`}
                 >
                   {CATEGORY_LABELS[article.category]}
                 </Link>
                 {anime && (
                   <Link
                     href={`/anime/${anime.slug}`}
-                    className="text-xs font-bold px-2.5 py-0.5 rounded bg-[#1a1a2a] text-gray-400 hover:text-white hover:bg-[#252535] transition-colors border border-[#252538]"
+                    className="tag-chip text-xs font-bold px-3 py-0.5"
                   >
                     {anime.title}
                   </Link>
                 )}
-                <time className="text-[10px] text-gray-600 ml-auto" dateTime={article.publishedAt}>
+                <time className="text-[10px] text-ink-muted ml-auto" dateTime={article.publishedAt}>
                   {new Date(article.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
               </div>
 
-              <h1 className="text-2xl md:text-3xl font-black text-white leading-tight mb-6">
+              <h1 className="text-2xl md:text-3xl font-black text-ink leading-tight mb-6">
                 {article.title}
               </h1>
 
@@ -124,16 +124,16 @@ export default async function ArticlePage({ params }: PageProps) {
               <AdBanner />
 
               {article.sections.length > 2 && (
-                <div className="bg-[#1a1a2a] rounded p-4 mb-8 border border-[#252538]">
-                  <h2 className="text-sm font-black text-[#00d4ff] mb-3">Table of Contents</h2>
+                <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-5 mb-8 border border-violet/15">
+                  <h2 className="text-sm font-black sunset-text mb-3">Table of Contents</h2>
                   <ol className="space-y-1.5">
                     {article.sections.map((section, i) => (
                       <li key={i}>
                         <a
                           href={`#section-${i}`}
-                          className="text-sm text-gray-500 hover:text-[#ff3a4f] transition-colors flex items-center gap-2"
+                          className="text-sm text-ink-soft hover:text-violet transition-colors flex items-center gap-2"
                         >
-                          <span className="text-[10px] font-black text-gray-600 w-5 text-right">{String(i + 1).padStart(2, '0')}</span>
+                          <span className="text-[10px] font-black text-ink-muted w-5 text-right">{String(i + 1).padStart(2, '0')}</span>
                           {section.heading}
                         </a>
                       </li>
@@ -164,13 +164,13 @@ export default async function ArticlePage({ params }: PageProps) {
               <ShareButtons title={article.title} />
 
               {/* Clickable Tags */}
-              <div className="flex items-center gap-2 flex-wrap mt-8 pt-6 border-t border-[#252538]">
-                <span className="text-xs text-gray-600 font-bold">Tags:</span>
+              <div className="flex items-center gap-2 flex-wrap mt-8 pt-6 border-t border-line">
+                <span className="text-xs text-ink-muted font-bold">Tags:</span>
                 {article.tags.map(tag => (
                   <Link
                     key={tag}
                     href={`/tag/${tagToSlug(tag)}`}
-                    className="text-[10px] text-gray-500 bg-[#1a1a2a] border border-[#252538] px-2.5 py-1 rounded hover:border-[#ff3a4f] hover:text-[#ff3a4f] transition-all"
+                    className="tag-chip text-[10px] px-3 py-1"
                   >
                     #{tag}
                   </Link>
@@ -181,8 +181,8 @@ export default async function ArticlePage({ params }: PageProps) {
             {/* More from this anime */}
             {moreFromAnime.length > 0 && (
               <div className="mt-8">
-                <h2 className="text-lg font-black text-white mb-4 flex items-center gap-2">
-                  <span className="text-[#00d4ff]">//</span>
+                <h2 className="text-lg font-black text-ink mb-4 flex items-center gap-2">
+                  <span aria-hidden className="w-1.5 h-5 rounded-full sunset-gradient" />
                   More {anime?.title} Analysis
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -196,8 +196,8 @@ export default async function ArticlePage({ params }: PageProps) {
             {/* Related Articles (cross-anime) */}
             {relatedArticles.length > 0 && (
               <div className="mt-8">
-                <h2 className="text-lg font-black text-white mb-4 flex items-center gap-2">
-                  <span className="text-[#ff3a4f]">//</span>
+                <h2 className="text-lg font-black text-ink mb-4 flex items-center gap-2">
+                  <span aria-hidden className="w-1.5 h-5 rounded-full sunset-gradient" />
                   Recommended Articles
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -209,17 +209,17 @@ export default async function ArticlePage({ params }: PageProps) {
             )}
 
             {/* Category Navigation */}
-            <div className="mt-8 anime-panel p-5">
-              <h2 className="text-sm font-black text-[#00d4ff] mb-3">Browse by Category</h2>
+            <div className="mt-8 glass-card p-5">
+              <h2 className="text-sm font-black sunset-text mb-3">Browse by Category</h2>
               <div className="flex flex-wrap gap-2">
                 {(['review', 'analysis', 'theory', 'guide', 'comparison'] as const).map(cat => (
                   <Link
                     key={cat}
                     href={`/category/${cat}`}
-                    className={`text-xs font-bold px-3 py-1.5 rounded border transition-all ${
+                    className={`text-xs font-bold px-3.5 py-1.5 rounded-full border transition-all ${
                       cat === article.category
-                        ? 'border-[#ff3a4f] text-[#ff3a4f] bg-[#ff3a4f]/10'
-                        : 'border-[#252538] text-gray-500 hover:border-[#ff3a4f] hover:text-[#ff3a4f]'
+                        ? 'border-rose/60 text-rose bg-rose/10'
+                        : 'border-line bg-white/50 text-ink-soft hover:border-violet/50 hover:text-violet'
                     }`}
                   >
                     {CATEGORY_LABELS[cat]}

@@ -50,9 +50,9 @@ export const CATEGORY_LABELS: Record<ArticleCategory, string> = {
 };
 
 export const CATEGORY_COLORS: Record<ArticleCategory, string> = {
-  review: 'bg-red-500/20 text-red-300 border border-red-500/30',
-  analysis: 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30',
-  theory: 'bg-purple-500/20 text-purple-300 border border-purple-500/30',
-  guide: 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30',
-  comparison: 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
+  review: 'bg-[#f2685c]/15 text-[#d04a3e] border border-[#f2685c]/35',
+  analysis: 'bg-[#7c5cd6]/12 text-[#6a4bc4] border border-[#7c5cd6]/30',
+  theory: 'bg-[#e0588f]/12 text-[#c4437a] border border-[#e0588f]/32',
+  guide: 'bg-emerald-500/12 text-emerald-700 border border-emerald-500/30',
+  comparison: 'bg-amber-400/15 text-amber-700 border border-amber-500/35',
 };

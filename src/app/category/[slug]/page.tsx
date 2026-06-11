@@ -69,14 +69,17 @@ export default async function CategoryPage({ params }: PageProps) {
           <div className="flex-1 min-w-0">
             {/* Header */}
             <div className="mb-6">
-              <nav className="text-xs text-gray-600 mb-4">
-                <Link href="/" className="hover:text-[#ff3a4f] transition-colors">Home</Link>
+              <nav className="text-xs text-ink-muted mb-4">
+                <Link href="/" className="hover:text-violet transition-colors">Home</Link>
                 <span className="mx-1">/</span>
-                <span className="text-gray-500">{label}</span>
+                <span className="text-ink-soft">{label}</span>
               </nav>
-              <h1 className="text-2xl md:text-3xl font-black text-white mb-2">{label} Articles</h1>
-              <p className="text-sm text-gray-500 mb-1">{articles.length} articles</p>
-              <p className="text-xs text-gray-600 max-w-2xl">{CATEGORY_DESCRIPTIONS[category]}</p>
+              <h1 className="text-2xl md:text-3xl font-black text-ink mb-2 flex items-center gap-3">
+                <span aria-hidden className="w-2 h-7 rounded-full sunset-gradient" />
+                {label} Articles
+              </h1>
+              <p className="text-sm text-ink-soft mb-1">{articles.length} articles</p>
+              <p className="text-xs text-ink-muted max-w-2xl">{CATEGORY_DESCRIPTIONS[category]}</p>
 
               {/* Category tabs */}
               <div className="flex gap-2 mt-4 flex-wrap">
@@ -84,10 +87,10 @@ export default async function CategoryPage({ params }: PageProps) {
                   <Link
                     key={cat}
                     href={`/category/${cat}`}
-                    className={`text-xs font-bold px-3 py-1.5 rounded border transition-all ${
+                    className={`text-xs font-bold px-3.5 py-1.5 rounded-full border transition-all ${
                       cat === category
-                        ? 'border-[#ff3a4f] text-[#ff3a4f] bg-[#ff3a4f]/10'
-                        : 'border-[#252538] text-gray-500 hover:border-[#ff3a4f] hover:text-[#ff3a4f]'
+                        ? 'border-rose/60 text-white sunset-gradient shadow-[0_6px_16px_-8px_rgba(224,88,143,0.6)]'
+                        : 'border-line bg-white/50 text-ink-soft hover:border-violet/50 hover:text-violet'
                     }`}
                   >
                     {CATEGORY_LABELS[cat]}
